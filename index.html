@@ -1,1 +1,442 @@
-Coming soon.
+<!-- Template taken from https://github.com/nerfies/nerfies.github.io -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Continuous Space-Time Video Super-Resolution with 3D Fourier Fields">
+  <meta name="keywords" content="Continuous Space-Time Video Super-Resolution">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Continuous Space-Time Video Super-Resolution with 3D Fourier Fields</title>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation" style="visibility: hidden;">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body" style="padding-bottom: 2rem;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Continuous Space-Time Video Super-Resolution with 3D Fourier Fields</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+            <a href="https://a1ex.dev">Alexander Becker</a>,</span>
+            <span class="author-block">
+            <a href="https://juliuserbach.github.io/">Julius Erbach</a>,</span>
+            <span class="author-block">
+            <a href="https://scholar.google.com/citations?user=tFx8AhkAAAAJ&hl=en">Dominik Narnhofer</a>,
+            </span>
+            <span class="author-block">
+            <a href="https://scholar.google.ch/citations?user=FZuNgqIAAAAJ&hl=en">Konrad Schindler</a>
+            </span>
+          </div>
+          <div class="is-size-5 mt-1 publication-authors">
+            <span class="author-block">ETH Zurich</span>
+          </div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+            <span class="link-block">
+                <a href="https://arxiv.org/abs/2509.26325"
+                class="external-link button is-normal is-rounded is-dark"
+                target="_blank">
+                <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                </span>
+                <span>arXiv</span>
+                </a>
+            </span>
+            <!-- Code Link. -->
+            <span class="link-block">
+                <a href=""
+                class="external-link button is-normal is-rounded is-dark is-static">
+                <span class="icon">
+                    <i class="fab fa-github"></i>
+                </span>
+                <span>Code (coming soon)</span>
+                </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline controls height="100%">
+        <source src="./static/videos/teaser_hk.mp4" type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">
+            V<sup>3</sup> reconstructs a spatio-temporally <strong>continuous video</strong> (right) given some
+            <strong>LR input</strong> (left).
+        </span>
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We introduce a novel formulation for continuous space-time video super-resolution. Instead of decoupling the representation of a video sequence into separate spatial and temporal components and relying on brittle, explicit frame warping for motion compensation, we encode video as a continuous, spatio-temporally coherent 3D Video Fourier Field (VFF). That representation offers three key advantages: (1) it enables cheap, flexible sampling at arbitrary locations in space and time; (2) it is able to simultaneously capture fine spatial detail and smooth temporal dynamics; and (3) it offers the possibility to include an analytical, Gaussian point spread function in the sampling to ensure aliasing-free reconstruction at arbitrary scale. The coefficients of the proposed, Fourier-like sinusoidal basis are predicted with a neural encoder with a large spatio-temporal receptive field, conditioned on the low-resolution input video. Through extensive experiments, we show that our joint modeling substantially improves both spatial and temporal super-resolution and sets a new state of the art for multiple benchmarks: across a wide range of upscaling factors, it delivers sharper and temporally more consistent reconstructions than existing baselines, while being computationally more efficient.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+<section class="hero is-light">
+    <div class="container is-max-desktop hero-body">
+        <div class="is-centered">
+            <h2 class="title is-3 mb-5 has-text-centered">How it works</h2>
+            <img src="./static/images/method.pdf" alt="Methods figure" class="mb-4"/>
+            <h2 class="subtitle">
+            <span class="is-size-6">
+                <strong>Overview of V<sup>3</sup>:</strong> A backbone encoder predicts a voxel grid of local phase shifts and
+                weighting coefficients for a set of 3D Fourier basis functions. Their sum describes, within a local
+                interval, the continuous function
+                V (x, y, t) that we call the Video Fourier Field. The function can
+                be sampled at different spatio-temporal resolutions to obtain an output video.
+            </span>
+            </h2>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+      <div class="is-centered has-text-centered">
+
+        <h2 class="title is-3">Results</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            The videos below show results on the spatio-temporal video SR task. For all methods, we select
+            ×4 spatial and ×8 temporal upsampling factors. Different methods can be selected using the menu
+            below each video. Note how V<sup>3</sup> reaches much more consistent results, and reconstructs
+            sharper details.
+          </p>
+        </div>
+
+        <div class="compare mb-6">
+            <div class="stack speed">
+            <video autoplay muted loop playsinline height="100%" class="active">
+                <source src="./static/videos/16_ours.mp4" type="video/mp4">
+            </video>
+            <video autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/16_bf.mp4" type="video/mp4">
+            </video>
+            <video autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/16_motif.mp4" type="video/mp4">
+            </video>
+            <video autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/16_vinr.mp4" type="video/mp4">
+            </video>
+            </div>
+            <nav class="pick">
+            Select method: &nbsp;
+            <a data-i="0" class="is-active">V<sup>3</sup> (ours)</a> |
+            <a data-i="1">BF-STVSR (CVPR '25)</a> |
+            <a data-i="2">MoTIF (ICCV '23)</a> |
+            <a data-i="3">VideoINR (CVPR '22)</a>
+            </nav>
+        </div>
+
+        <div class="compare mb-6">
+            <div class="stack">
+            <video autoplay muted loop playsinline height="100%" class="active">
+                <source src="./static/videos/5_ours.mp4" type="video/mp4">
+            </video>
+            <video autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/5_bf.mp4" type="video/mp4">
+            </video>
+            <video autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/5_motif.mp4" type="video/mp4">
+            </video>
+            <video autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/5_vinr.mp4" type="video/mp4">
+            </video>
+            </div>
+            <nav class="pick">
+            Select method: &nbsp;
+            <a data-i="0" class="is-active">V<sup>3</sup> (ours)</a> |
+            <a data-i="1">BF-STVSR (CVPR '25)</a> |
+            <a data-i="2">MoTIF (ICCV '23)</a> |
+            <a data-i="3">VideoINR (CVPR '22)</a>
+            </nav>
+        </div>
+
+        <div class="compare mb-6">
+            <div class="stack">
+            <video autoplay muted loop playsinline height="100%" class="active">
+                <source src="./static/videos/3_ours.mp4" type="video/mp4">
+            </video>
+            <video autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/3_bf.mp4" type="video/mp4">
+            </video>
+            <video autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/3_motif.mp4" type="video/mp4">
+            </video>
+            <video autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/3_vinr.mp4" type="video/mp4">
+            </video>
+            </div>
+            <nav class="pick">
+            Select method: &nbsp;
+            <a data-i="0" class="is-active">V<sup>3</sup> (ours)</a> |
+            <a data-i="1">BF-STVSR (CVPR '25)</a> |
+            <a data-i="2">MoTIF (ICCV '23)</a> |
+            <a data-i="3">VideoINR (CVPR '22)</a>
+            </nav>
+        </div>
+
+        <div class="compare mb-6">
+            <div class="stack">
+            <video autoplay muted loop playsinline height="100%" class="active">
+                <source src="./static/videos/7_ours_il.mp4" type="video/mp4">
+            </video>
+            <video autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/7_bf_il.mp4" type="video/mp4">
+            </video>
+            <video autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/7_motif_il.mp4" type="video/mp4">
+            </video>
+            <video autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/7_vinr_il.mp4" type="video/mp4">
+            </video>
+            </div>
+            <nav class="pick">
+            Select method: &nbsp;
+            <a data-i="0" class="is-active">V<sup>3</sup> (ours)</a> |
+            <a data-i="1">BF-STVSR (CVPR '25)</a> |
+            <a data-i="2">MoTIF (ICCV '23)</a> |
+            <a data-i="3">VideoINR (CVPR '22)</a>
+            </nav>
+        </div>
+
+        <div class="compare mb-6">
+            <div class="stack crop speed">
+            <video autoplay muted loop playsinline height="100%" class="active">
+                <source src="./static/videos/9_ours.mp4" type="video/mp4">
+            </video>
+            <video autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/9_bf.mp4" type="video/mp4">
+            </video>
+            <video autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/9_motif.mp4" type="video/mp4">
+            </video>
+            <video autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/9_vinr.mp4" type="video/mp4">
+            </video>
+            </div>
+            <nav class="pick">
+            Select method: &nbsp;
+            <a data-i="0" class="is-active">V<sup>3</sup> (ours)</a> |
+            <a data-i="1">BF-STVSR (CVPR '25)</a> |
+            <a data-i="2">MoTIF (ICCV '23)</a> |
+            <a data-i="3">VideoINR (CVPR '22)</a>
+            </nav>
+        </div>
+
+        <div class="compare">
+            <div class="stack">
+            <video autoplay muted loop playsinline height="100%" class="active">
+                <source src="./static/videos/gp7_ours.mp4" type="video/mp4">
+            </video>
+            <video autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/gp7_bf.mp4" type="video/mp4">
+            </video>
+            <video autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/gp7_motif.mp4" type="video/mp4">
+            </video>
+            <video autoplay muted loop playsinline height="100%">
+                <source src="./static/videos/gp7_vinr.mp4" type="video/mp4">
+            </video>
+            </div>
+            <nav class="pick">
+            Select method: &nbsp;
+            <a data-i="0" class="is-active">V<sup>3</sup> (ours)</a> |
+            <a data-i="1">BF-STVSR (CVPR '25)</a> |
+            <a data-i="2">MoTIF (ICCV '23)</a> |
+            <a data-i="3">VideoINR (CVPR '22)</a>
+            </nav>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!--<section class="section">
+    <div class="container is-max-desktop">
+    <div class="is-centered has-text-centered">
+      <h2 class="title is-3">Results — Time-Only SR</h2>
+
+      <div class="content has-text-justified is-size-5">
+        <p>
+            Here we show some results on the Video Frame Interpolation Task (×1 spatial, ×8 temporal SR).
+        </p>
+      </div>
+
+      <div class="compare mb-6">
+          <div class="stack">
+          <video autoplay muted loop playsinline height="100%" class="active">
+              <source src="./static/videos/3_x1x8_ours.mp4" type="video/mp4">
+          </video>
+          <video autoplay muted loop playsinline height="100%">
+              <source src="./static/videos/3_x1x8_bf.mp4" type="video/mp4">
+          </video>
+          <video autoplay muted loop playsinline height="100%">
+              <source src="./static/videos/3_x1x8_motif.mp4" type="video/mp4">
+          </video>
+          <video autoplay muted loop playsinline height="100%">
+              <source src="./static/videos/3_x1x8_vinr.mp4" type="video/mp4">
+          </video>
+          </div>
+          <nav class="pick is-size-5">
+          Select method: &nbsp;
+          <a data-i="0" class="is-active">V<sup>3</sup> (ours)</a> |
+          <a data-i="1">BF-STVSR (CVPR '25)</a> |
+          <a data-i="2">MoTIF (ICCV '23)</a> |
+          <a data-i="3">VideoINR (CVPR '22)</a>
+          </nav>
+      </div>
+    </div>
+
+  </div>
+  </section>-->
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="is-centered has-text-centered">
+            <h2 class="title is-3">Temporal Cross Section</h2>
+
+            <div class="content has-text-justified">
+              <p>
+                  The figure below shows a vertical slice through a video over time, i.e.
+                  its temporal cross section. It shows how V<sup>3</sup> propagates structure
+                  smoothly through time, while comparison methods exhibit overly linear behavior
+                  and blocky discontinuities (arrows).
+              </p>
+            </div>
+
+            <img src="./static/images/temp.pdf" alt="Temporal figure" class="mb-2" width="100%"/>
+            <h2 class="subtitle has-text-centered">
+            <span class="dnerf">
+                Temporal cross sections through a super-resolved video for various methods.
+            </span>
+            </h2>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="is-centered has-text-centered">
+            <h2 class="title is-3">Computational Efficiency</h2>
+            <div class="content has-text-centered">
+              <p>
+                  Generally, V<sup>3</sup> is significantly faster than competitors while reaching superior performance.
+              </p>
+            </div>
+            <img src="./static/images/complexity.png" alt="Complexity figure" class="mb-2" width="40%"/>
+            <h2 class="subtitle has-text-centered">
+            <span class="dnerf">
+                Performance-speed tradeoff of various methods.
+            </span>
+            </h2>
+        </div>
+    </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <p>If you found our work helpful, consider citing our paper 😊:</p>
+    <pre><code>@misc{becker2025continuous,
+    title={Continuous Space-Time Video Super-Resolution with 3D Fourier Fields},
+    author={Alexander Becker and Julius Erbach and Dominik Narnhofer and Konrad Schindler},
+    year={2025},
+    eprint={2509.26325},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV},
+    url={https://arxiv.org/abs/2509.26325},
+}</code></pre>
+    </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page was adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
